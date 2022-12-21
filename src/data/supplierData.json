@@ -23,24 +23,24 @@
         "id": 2
       },
       {
-        "supplierCode": "6065052",
-        "supplierName": "HBC-radiomatic GmbH",
-        "purchaser": "CB",
+        "supplierCode": "6109411",
+        "supplierName": "Walter Ruck  Metallbau GmbH",
+        "purchaser": "CD",
         "country": "DE",
-        "invoiceValue": 1542976.22,
-        "materialPriceChange": 2.6,
-        "deliveryPerformance": 75.29,
+        "invoiceValue": 1887960.35,
+        "materialPriceChange": 11.51,
+        "deliveryPerformance": 97.14,
         "qualityPerformance": 100,
         "id": 3
       },
       {
-        "supplierCode": "6065188",
-        "supplierName": "HAWE Hydraulik SE",
-        "purchaser": "BB",
-        "country": "DE",
-        "invoiceValue": 1068378.51,
-        "materialPriceChange": -6.01,
-        "deliveryPerformance": 82.09,
+        "supplierCode": "6554725",
+        "supplierName": "TEGAS METAL SANAYİ VE TİC. A.Ş.",
+        "purchaser": "CA",
+        "country": "TR",
+        "invoiceValue": 188568.40,
+        "materialPriceChange": 0.68,
+        "deliveryPerformance": 62.19,
         "qualityPerformance": 100,
         "id": 4
       }

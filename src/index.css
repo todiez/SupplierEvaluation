@@ -26,9 +26,30 @@
 }
 
 .table-left {
-  max-width: 25px;
+  max-width: 25px; 
 }
 
 .table-right {
   max-width: 25px;
+}
+
+.indicator-green {
+  background-color: green;
+  text-align: center;
+  font-weight: bold;
+}
+.indicator-yellow {
+  background-color: yellow;
+  text-align: center;
+  font-weight: bold;
+}
+.indicator-orange {
+  background-color: orange;
+  text-align: center;
+  font-weight: bold;
+}
+.indicator-red {
+  background-color: red;
+  text-align: center;
+  font-weight: bold;
 }
