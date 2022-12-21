@@ -3,36 +3,45 @@ import React from "react";
 const SupplierDetail = ({ suppliers }) => {
   console.log(suppliers[0].supplierName);
 
-  let priceScore = 0;
-  
-  let onTimeDeliveryScore = 0;
+  //------Hard Facts Calculation below:
+  let priceScoreArray = [];
+  for (let i = 0; i < suppliers.length; i++) {
+    priceScoreArray.push(suppliers[i].materialPriceChange);
+  }
+
   let onTimeDeliveryScoreArray = [];
   for (let i = 0; i < suppliers.length; i++) {
     onTimeDeliveryScoreArray.push(suppliers[i].deliveryPerformance);
   }
 
-  
+  let qualityScoreArray = [];
+  for (let i = 0; i < suppliers.length; i++) {
+    qualityScoreArray.push(suppliers[i].qualityPerformance);
+  }
 
-  let qualityScore = 0;
+  let hardFactsScoreArray = [];
+  for (let i = 0; i < suppliers.length; i++) {
+    hardFactsScoreArray[i] =
+      priceScoreArray[i] + onTimeDeliveryScoreArray[i] + qualityScoreArray[i];
+  }
+
+  //------Soft Facts Calculation below:
+
   let communicationScore = 0;
   let flexibilityScore = 0;
   let innovationScore = 0;
 
-
-  let hardFactsScore = priceScore + onTimeDeliveryScore + qualityScore;
   let softFactsScore = communicationScore + flexibilityScore + innovationScore;
-  
+
+  let hardFactsScore = 0;
   let totalScore = hardFactsScore + softFactsScore;
   let totalRating = "ausrechnen";
 
- 
+  //----------------------------------
   let invoiceSum = 0;
   for (let i = 0; i < suppliers.length; i++) {
     invoiceSum += suppliers[i].invoiceValue;
   }
-
-
-  
 
   return (
     <div className="row row-cols-1 row-cols-md-2 g-4">
@@ -57,9 +66,10 @@ const SupplierDetail = ({ suppliers }) => {
                         Percentage of Total Invoices:
                       </td>
                       <td className="table-right">
-                        {
-                            (supplier.invoiceValue/invoiceSum * 100).toFixed(2)
-                        }%
+                        {((supplier.invoiceValue / invoiceSum) * 100).toFixed(
+                          2
+                        )}
+                        %
                       </td>
                     </tr>
                     <tr>
@@ -68,7 +78,9 @@ const SupplierDetail = ({ suppliers }) => {
                     </tr>
                     <tr>
                       <td className="table-left">Hard Facts Score:</td>
-                      <td className="table-right">{hardFactsScore}</td>
+                      <td className="table-right">
+                        {hardFactsScoreArray[supplier.id - 1]}
+                      </td>
                     </tr>
                     <tr>
                       <td className="table-left">Soft Facts Score:</td>
