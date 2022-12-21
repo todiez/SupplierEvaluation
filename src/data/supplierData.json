@@ -21,6 +21,28 @@
         "deliveryPerformance": 82.09,
         "qualityPerformance": 100,
         "id": 2
+      },
+      {
+        "supplierCode": "6065052",
+        "supplierName": "HBC-radiomatic GmbH",
+        "purchaser": "CB",
+        "country": "DE",
+        "invoiceValue": 1542976.22,
+        "materialPriceChange": 2.6,
+        "deliveryPerformance": 75.29,
+        "qualityPerformance": 100,
+        "id": 3
+      },
+      {
+        "supplierCode": "6065188",
+        "supplierName": "HAWE Hydraulik SE",
+        "purchaser": "BB",
+        "country": "DE",
+        "invoiceValue": 1068378.51,
+        "materialPriceChange": -6.01,
+        "deliveryPerformance": 82.09,
+        "qualityPerformance": 100,
+        "id": 4
       }
     ]
   }

@@ -1,18 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 /* base styles */
 * {
   font-family: "Quicksand";
-
 }
 
-.App{
-   margin: 20px;
-   color: #533553;
+.App h1 {
+  margin: 20px;
+  font-weight: bold;
 }
 
-.home h1{
-  color: red;
-  font-weight: bolder;
+/*Supplier Score Card*/
+.supplier-score-card {
+  margin: 20px;
+  max-width: 500px;
+}
+
+.card-header {
+  font-weight: bold;
+}
+
+.card-footer {
+  font-weight: bold;
+  text-align: center;
+}
+
+.table-left {
+  max-width: 25px;
+}
+
+.table-right {
+  max-width: 25px;
 }
