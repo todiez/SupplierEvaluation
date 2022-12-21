@@ -1,6 +1,6 @@
 import React from "react";
 
-const SupplierDetail = ({ suppliers, supplierTitle }) => {
+const SupplierDetail = ({ suppliers }) => {
   console.log(suppliers[0].supplierName);
 
   return (
