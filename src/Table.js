@@ -8,10 +8,11 @@ const Table = ({ suppliers }) => {
   for (let i = 0; i < suppliers.length; i++) {
     invoiceSum += suppliers[i].invoiceValue;
   }
+  console.log(suppliers);
 
   //--- Sorting Supplier Array
   suppliers.sort((a, b) => {
-    return b.totalScore - a.totalScore;
+    return b.abc - a.abc;
   });
 
   return (
@@ -40,7 +41,7 @@ const Table = ({ suppliers }) => {
               <td>{supplier.supplierName}</td>
               <td>{supplier.supplierCode}</td>
               <td>{supplier.invoiceValue}</td>
-              <td>{((supplier.invoiceValue / invoiceSum) * 100).toFixed(2)}</td>
+              <td>{supplier.abc}</td>
               <td>{supplier.totalScore}</td>
               <td>{supplier.hardFactsScore}</td>
               <td>{supplier.softFactsScore}</td>

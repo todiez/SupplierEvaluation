@@ -4,8 +4,13 @@ const Calc = (suppliers) => {
     let weightingPrice = 10;
     let weightingOnTimeDelivery = 6;
     let weightingQuality = 8;
-  
-  
+    let invoiceSum = 0;
+    
+
+    for (let i = 0; i < suppliers.length; i++) {
+      invoiceSum += suppliers[i].invoiceValue;
+    }
+ 
     //manipulating original supplier array of objects
     //--->>> addding scores per category and calculating total scores
     //as well as total hard/soft facts score
@@ -14,6 +19,10 @@ const Calc = (suppliers) => {
       let pairPrice = {};
       let pairOnTimeDelivery = {};
       let pairQualitiy = {};
+      let pairABC = {};
+
+      let invoicePercentage = ((suppliers[i].invoiceValue / invoiceSum) * 100).toFixed(2);
+      pairABC = {abc: invoicePercentage}
   
       //---- Hard Facts-----
       //Pricing Score
@@ -55,7 +64,7 @@ const Calc = (suppliers) => {
   
   
       //---adding all calculated objects together into a new array
-      obj = { ...suppliers[i], ...pairPrice, ...pairOnTimeDelivery, ...pairQualitiy, ...pairHardFactsScore, ...pairSoftFactsScore, ...pairTotalScore, ...pairEvaluation };
+      obj = { ...suppliers[i], ...pairPrice, ...pairOnTimeDelivery, ...pairQualitiy, ...pairHardFactsScore, ...pairSoftFactsScore, ...pairTotalScore, ...pairEvaluation, ...pairABC };
       suppliersArray.push(obj);
     }
    
