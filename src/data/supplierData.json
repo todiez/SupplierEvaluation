@@ -43,6 +43,17 @@
         "deliveryPerformance": 62.19,
         "qualityPerformance": 100,
         "id": 4
+      },
+      {
+        "supplierCode": "6554725",
+        "supplierName": "TEGAS METAL SANAYİ VE TİC. A.Ş.",
+        "purchaser": "CA",
+        "country": "TR",
+        "invoiceValue": 218568.40,
+        "materialPriceChange": 0.68,
+        "deliveryPerformance": 92.19,
+        "qualityPerformance": 100,
+        "id": 5
       }
     ]
   }

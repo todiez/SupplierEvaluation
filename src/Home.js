@@ -15,7 +15,7 @@ const Home = () => {
       {error && <div>{error}</div>}
       {!loaded && <div>Loading</div>}
       {data && <TableView suppliers={test} />}
-      {/* {data && <CardView suppliers={data} />} */}
+      {data && <CardView suppliers={test} />}
       
      
     </div>
