@@ -3,6 +3,7 @@ import "./index.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./Navbar";
 import TableView from "./TableView";
+import CardView from "./CardView";
 
 function App() {
   return (
@@ -15,9 +16,12 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            {/* <Route path="/tableview">
+            <Route path="/table">
               <TableView />
-            </Route> */}
+            </Route>
+            <Route path="/card">
+              <CardView />
+            </Route>
           </Switch>
         </div>
       </div>

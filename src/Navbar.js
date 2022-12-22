@@ -6,7 +6,8 @@ const Navbar = () => {
             <h1>Supplier Evaluation</h1>
         <div className="links">
             <Link to="/" >Home</Link>
-            <Link to="/tableview">Table View</Link>
+            <Link to="/table">Table View</Link>
+            <Link to="/card">Card View</Link>
         </div>
         </nav>
         
