@@ -6,18 +6,22 @@ import TableView from "./TableView";
 
 function App() {
   return (
-   <Router>      <div className="App">
-        
+    <Router>
+     
+      <div className="App">
         <div className="content">
-            <Navbar />
+          <Navbar />
+          <Switch>
+            <Route exact path="/">
               <Home />
-            
-             
-          
+            </Route>
+            {/* <Route path="/tableview">
+              <TableView />
+            </Route> */}
+          </Switch>
         </div>
       </div>
-      </Router>
-
+    </Router>
   );
 }
 

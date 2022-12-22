@@ -1,6 +1,6 @@
 import React from "react";
 
-const SupplierCalc = ({ suppliers }) => {
+const CardView = ({ suppliers }) => {
   let suppliersArray = [];
   let weightingPrice = 10;
   let weightingOnTimeDelivery = 6;
@@ -135,4 +135,4 @@ const SupplierCalc = ({ suppliers }) => {
   );
 };
 
-export default SupplierCalc;
+export default CardView;

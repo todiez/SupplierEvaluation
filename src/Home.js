@@ -1,7 +1,5 @@
 import useFetch from "./useFetch";
-import { useEffect, useState } from "react";
-import SupplierCalc from "./SupplierCalc";
-import Navbar from "./Navbar";
+import CardView from "./CardView";
 import TableView from "./TableView";
 
 const Home = () => {
@@ -12,7 +10,9 @@ const Home = () => {
       {error && <div>{error}</div>}
       {!loaded && <div>Loading</div>}
       {data && <TableView suppliers={data} />}
-      {data && <SupplierCalc suppliers={data} />}
+      {data && <CardView suppliers={data} />}
+      
+     
     </div>
   );
 };
