@@ -9,6 +9,7 @@ const Navbar = () => {
             <Link to="/table">Table View</Link>
             <Link to="/card">Card View</Link>
         </div>
+        
         </nav>
         
     );

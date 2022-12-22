@@ -3,48 +3,48 @@
 /* base styles */
 * {
   font-family: "Quicksand";
+  background: #333;
 }
 .navbar {
-  padding: 20px;
+  padding: 200px;
   display: flex;
   align-items: center;
-  /* max-width: 1000px; */
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
 }
 .navbar h1 {
-  color: #f1356d;
+  color: #bdac16;
+  font-weight: bold;
 }
-.navbar .links {
-  margin-left: auto;
+.links {
+  /* left: -500px;
+  position: relative; */
+  position: fixed;
+  left: 400px;
 }
+
 .navbar a {
   margin-left: 16px;
   text-decoration: none;
-  padding: 6px;
-  color: black;
+  color: #bdac16;
+  font-size: large;
 }
 .navbar a:hover {
-  color: #f1356d;
+  color: #bd7516;
 }
 .content {
   max-width: auto;
-  margin: 40px auto;
+  margin: auto;
   padding: 20px;
 }
 
 
 
-.App h1 {
-  margin: 20px;
-  font-weight: bold;
-}
 
 /*Supplier Score Card*/
 .supplier-score-card {
   margin: 20px;
   max-width: 500px;
-
 }
 
 .card-header {
@@ -83,4 +83,47 @@
 .D {
   color: red;
   font-weight: bold; 
+}
+
+
+/* TableView */
+
+
+.loading {
+  color: #bdac16;
+  font-size: larger;
+  font-weight: bold;
+  margin: 50px;
+}
+
+/* home new blog form */
+.home {
+  margin: 0 auto;
+  text-align: center;
+  color: #bdac16;
+}
+
+.home label {
+  text-align: left;
+  display: block;
+}
+.home h2 {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+.home input, .home textarea, .home select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+  color: #bdac16;
+}
+.home button {
+  background: #bdac16;;
+  border: 0;
+  padding: 8px;
+  border-radius: 12px;
+  cursor: pointer;
 }

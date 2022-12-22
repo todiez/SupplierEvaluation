@@ -16,7 +16,7 @@ const Table = ({ suppliers }) => {
 
   return (
     
-    <div>
+    <div className="table">
       <table className="table table-dark">
         <thead>
           <tr>

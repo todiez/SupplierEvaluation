@@ -9,6 +9,7 @@ const useFetch = (url) => {
 
  
   useEffect(() => { 
+    setTimeout(() => { 
     fetch(url)
     .then((resp) => {
       if (!resp.ok) {
@@ -27,7 +28,7 @@ const useFetch = (url) => {
       setLoaded(true);
       setError(err.message);
     });
-
+  },800)
    
   }, [url]);
 

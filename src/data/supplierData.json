@@ -54,6 +54,17 @@
         "deliveryPerformance": 92.19,
         "qualityPerformance": 100,
         "id": 5
+      },
+      {
+        "supplierCode": "6109411",
+        "supplierName": "Walter Ruck  Metallbau GmbH",
+        "purchaser": "CD",
+        "country": "DE",
+        "invoiceValue": 1887960.35,
+        "materialPriceChange": 1.51,
+        "deliveryPerformance": 97.14,
+        "qualityPerformance": 100,
+        "id": 6
       }
     ]
   }

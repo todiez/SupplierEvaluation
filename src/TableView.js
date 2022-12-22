@@ -5,16 +5,17 @@ import Calc from "./Calc";
 const TableView = () => {
   const { data, loaded, error } = useFetch("http://localhost:8000/suppliers");
 
-  let test = (data && Calc(data));
+  let suppliers = data && Calc(data);
+
+
 
   return (
     <div className="home">
       {error && <div>{error}</div>}
-      {!loaded && <div>Loading</div>}
-      
-      {data && <Table suppliers={test} />}
-     
-           
+      {!loaded && <div className="loading">Loading...</div>}
+
+
+      {data && <Table suppliers={suppliers} />}
     </div>
   );
 };
