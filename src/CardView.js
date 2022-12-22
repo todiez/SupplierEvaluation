@@ -59,7 +59,7 @@ const CardView = ({ suppliers }) => {
     obj = { ...suppliers[i], ...pairPrice, ...pairOnTimeDelivery, ...pairQualitiy, ...pairHardFactsScore, ...pairSoftFactsScore, ...pairTotalScore, ...pairEvaluation };
     suppliersArray.push(obj);
   }
-  console.log(suppliersArray)
+  
   //--- Calculation of invoiceSum of all suppliers
   //-->>> ABC analysis
   let invoiceSum = 0;

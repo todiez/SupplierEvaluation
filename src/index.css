@@ -28,7 +28,7 @@
   color: #f1356d;
 }
 .content {
-  max-width: 800px;
+  max-width: auto;
   margin: 40px auto;
   padding: 20px;
 }
@@ -64,24 +64,23 @@
   max-width: 25px;
 }
 
+
+
+
 /* Rating Classes ABCD */
 .A {
-  background-color: green;
-  text-align: center;
-  font-weight: bold;
+  color: green;
+  font-weight: bold;   
 }
 .B {
-  background-color: yellow;
-  text-align: center;
-  font-weight: bold;
+  color: yellow;
+  font-weight: bold; 
 }
 .C {
-  background-color: orange;
-  text-align: center;
-  font-weight: bold;
+  color: orange;
+  font-weight: bold; 
 }
 .D {
-  background-color: red;
-  text-align: center;
-  font-weight: bold;
+  color: red;
+  font-weight: bold; 
 }
