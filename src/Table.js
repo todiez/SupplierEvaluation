@@ -31,10 +31,12 @@ const Table = ({ suppliers }) => {
             <th scope="col">Total Rating</th>
           </tr>
         </thead>
-        {suppliers.map((supplier) => (
+        
+        {suppliers.map((supplier, counter) => (
+          
           <tbody key={supplier.id}>
             <tr>
-              <th scope="row"></th>
+              <th scope="row">{counter+1}</th>
               <td>{supplier.supplierName}</td>
               <td>{supplier.supplierCode}</td>
               <td>{supplier.invoiceValue}</td>
