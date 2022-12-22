@@ -10,7 +10,7 @@ const CardView = () => {
   return (
     <div className="home">
       {error && <div>{error}</div>}
-      {!loaded && <div>Loading</div>}
+      {!loaded && <div className="loading">Loading...</div>}
       
       {data && <Card suppliers={test} />}
      
