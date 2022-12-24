@@ -8,12 +8,67 @@ const Table = ({ suppliers }) => {
   for (let i = 0; i < suppliers.length; i++) {
     invoiceSum += suppliers[i].invoiceValue;
   }
-  console.log(suppliers);
+  console.log(suppliers)
 
   //--- Sorting Supplier Array
-  suppliers.sort((a, b) => {
-    return b.abc - a.abc;
+  const fireSorting = (sorting) => {
+    console.log(sorting)
+  const suppliersSorted = suppliers.sort((a, b) => {
+
+    switch (sorting) {
+      case 'totalScore' : return b.totalScore - a.totalScore;
+
+      default : return;
+   
+    }       
+
+    return (
+    
+      <div className="table">
+        <table className="table table-dark">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col"><button>Supplier Name</button></th>
+              <th scope="col"><button>Supplier Code</button></th>
+              <th scope="col"><button>Purchaser</button></th>
+              <th scope="col"><button>Annual Volume</button></th>
+              <th scope="col"><button>% of Total Volume</button></th>
+              <th scope="col"><button onClick={() => fireSorting('totalScore')}>Total Score</button></th>
+              <th scope="col"><button>Hard Facts Score</button></th>
+              <th scope="col"><button>Soft Facts Score</button></th>
+              <th scope="col"><button>Total Rating</button></th>
+            </tr>
+          </thead>
+          
+          {suppliers.map((supplier, counter) => (
+            
+            <tbody key={supplier.id}>
+              <tr>
+                <th scope="row">{counter+1}</th>
+                <td>{supplier.supplierName}</td>
+                <td>{supplier.supplierCode}</td>
+                <td>{supplier.purchaser}</td>
+                <td>{supplier.invoiceValue}</td>
+                <td>{supplier.abc}</td>
+                <td>{supplier.totalScore}</td>
+                <td>{supplier.hardFactsScore}</td>
+                <td>{supplier.softFactsScore}</td>
+                <td className={supplier.totalRating}>{supplier.totalRating}</td>
+              </tr>
+            </tbody>
+          ))}
+        </table>
+      </div>
+    );
+
+    
+  
   });
+
+  console.log('firesorting fired');
+  console.log(suppliersSorted);
+};
 
   return (
     
@@ -22,14 +77,15 @@ const Table = ({ suppliers }) => {
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Supplier Name</th>
-            <th scope="col">Supplier Code</th>
-            <th scope="col">Annual Volume</th>
-            <th scope="col">% of Total Volume</th>
-            <th scope="col">Total Score</th>
-            <th scope="col">Hard Facts Score</th>
-            <th scope="col">Soft Facts Score</th>
-            <th scope="col">Total Rating</th>
+            <th scope="col"><button>Supplier Name</button></th>
+            <th scope="col"><button>Supplier Code</button></th>
+            <th scope="col"><button>Purchaser</button></th>
+            <th scope="col"><button>Annual Volume</button></th>
+            <th scope="col"><button>% of Total Volume</button></th>
+            <th scope="col"><button onClick={() => fireSorting('totalScore')}>Total Score</button></th>
+            <th scope="col"><button>Hard Facts Score</button></th>
+            <th scope="col"><button>Soft Facts Score</button></th>
+            <th scope="col"><button>Total Rating</button></th>
           </tr>
         </thead>
         
@@ -40,6 +96,7 @@ const Table = ({ suppliers }) => {
               <th scope="row">{counter+1}</th>
               <td>{supplier.supplierName}</td>
               <td>{supplier.supplierCode}</td>
+              <td>{supplier.purchaser}</td>
               <td>{supplier.invoiceValue}</td>
               <td>{supplier.abc}</td>
               <td>{supplier.totalScore}</td>
