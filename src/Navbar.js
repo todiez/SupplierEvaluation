@@ -8,6 +8,10 @@ const Navbar = () => {
             <Link to="/" >Home</Link>
             <Link to="/table">Table View</Link>
             <Link to="/card">Card View</Link>
+            <Link to="/faq">FAQ</Link>
+        </div>
+        <div className="logo">
+            <img src="./src/data/PM-logo.png" alt="LOGO" width="73" />
         </div>
         
         </nav>
