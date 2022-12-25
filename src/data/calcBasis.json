@@ -1,0 +1,25 @@
+{
+    "calcBasis": [
+        {
+            "priceBoundary1": 2.1,
+            "priceBoundary2": 2.1,
+            "priceBoundary3": 2.1,
+            "priceBoundary4": 2.1,
+            "otdBoundary1": 95,
+            "otdBoundary2": 990,
+            "otdBoundary3": 75,
+            "otdBoundary4": 60,
+            "qBoundary1": 98,
+            "qBoundary2": 95,
+            "qBoundary3": 92,
+            "qBoundary4": 90,
+            "score1": 0,
+            "score2": 5,
+            "score3": 10,
+            "score4": 15,
+            "score5": 20,            
+            
+            "id": 1
+          }
+    ]
+}

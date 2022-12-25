@@ -25,12 +25,24 @@ const Home = () => {
   const [score5, setScore5] = useState(20);
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
-    // const blog = { title, body, score };
-    // setIsPending(true);
-  };
+    e.preventDefault();
+    console.log('adjusting values button fired');    
+    setIsPending(true);
 
- 
+    const calcBasis = {test: '123'};
+
+    fetch("http://localhost:8000/calcBasis", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(calcBasis),
+    }).then(() => {
+        console.log('CalcBasis updated')
+        setIsPending(false);
+        //history.push('/');
+    });
+
+
+  };
 
   //Link to percentage input
   //https://codepen.io/tomasMetcalfe/pen/poojJLE
@@ -39,7 +51,7 @@ const Home = () => {
       <div className="container text-center">
         <div className="row align-item-start">
           <div className="col">
-          <form>
+            <form>
               <label>Max Score</label>
               <input
                 type="number"
@@ -61,7 +73,7 @@ const Home = () => {
                 value={score3}
                 onChange={(e) => setScore3(e.target.value)} //makes changes in the input field possible
               />
-                   <label>Score 2</label>
+              <label>Score 2</label>
               <input
                 type="number"
                 required
@@ -114,7 +126,7 @@ const Home = () => {
 
           <div className="col">
             <form>
-            <br />
+              <br />
               <label>OTD Boundary 1</label>
               <input
                 type="number"
@@ -148,7 +160,7 @@ const Home = () => {
 
           <div className="col">
             <form>
-            <br />
+              <br />
               <label>Quality Boundary 1</label>
               <input
                 type="number"
@@ -179,11 +191,12 @@ const Home = () => {
               />
             </form>
           </div>
-          <form onSubmit={handleSubmit}>
-            <br /> <br /> <br />
-            {!isPending && <button>Adjust Values</button>}
+          <div>
+            {!isPending && (
+              <button onClick={handleSubmit}>Adjust Values</button>
+            )}
             {isPending && <button disabled>Adjusting Valuess...</button>}
-          </form>
+          </div>
         </div>
       </div>
     </div>

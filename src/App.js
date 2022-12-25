@@ -22,6 +22,9 @@ function App() {
             <Route path="/card">
               <CardView />
             </Route>
+            <Route path="/faq">
+              <div><h1>Test</h1></div>
+            </Route>
           </Switch>
         </div>
       </div>
