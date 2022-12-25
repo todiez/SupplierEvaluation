@@ -1,14 +1,22 @@
 import { useState } from "react";
+import useFetch from "./useFetch";
 
 const Home = () => {
   const [isPending, setIsPending] = useState(false);
+
+  const { data, loaded, error } = useFetch("http://localhost:8001/calcBasis");
+
+   
+
+  const otdBoundary01 = (data && data[0].otdBoundary1);
+  console.log(otdBoundary01);
 
   const [priceBoundary1, setPriceBoundary1] = useState(2.1);
   const [priceBoundary2, setPriceBoundary2] = useState(0.3);
   const [priceBoundary3, setPriceBoundary3] = useState(-0.3);
   const [priceBoundary4, setPriceBoundary4] = useState(-2.1);
 
-  const [otdBoundary1, setOtdBoundary1] = useState(95);
+  const [otdBoundary1, setOtdBoundary1] = useState(9);
   const [otdBoundary2, setOtdBoundary2] = useState(90);
   const [otdBoundary3, setOtdBoundary3] = useState(75);
   const [otdBoundary4, setOtdBoundary4] = useState(60);
@@ -31,14 +39,24 @@ const Home = () => {
 
     const calcBasis = {test: '123'};
 
-    fetch("http://localhost:8000/calcBasis", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(calcBasis),
-    }).then(() => {
+    
+    
+    
+    fetch("http://localhost:8001/calcBasis", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(calcBasis),
+      }
+    )
+    .then(() => {
         console.log('CalcBasis updated')
         setIsPending(false);
         //history.push('/');
+    });
+
+    fetch("http://localhost:8001/calcBasis/1", {
+      method: "DELETE"
+  
     });
 
 
