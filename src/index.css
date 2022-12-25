@@ -38,9 +38,6 @@
   padding: 20px;
 }
 
-
-
-
 /*Supplier Score Card*/
 .supplier-score-card {
   margin: 20px;
@@ -63,8 +60,6 @@
 .table-right {
   max-width: 25px;
 }
-
-
 
 
 /* Rating Classes ABCD */
@@ -120,7 +115,7 @@
 .home button {
   background: #bdac16;;
   border: 0;
-  padding: 8px;
+  padding: 8px 12px 8px 12px;
   border-radius: 12px;
   cursor: pointer;
 }
