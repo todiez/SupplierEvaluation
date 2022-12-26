@@ -7,16 +7,15 @@ const Home = () => {
   const { data, loaded, error } = useFetch("http://localhost:8001/calcBasis");
 
    
-
   const otdBoundary01 = (data && data[0].otdBoundary1);
-  console.log(otdBoundary01);
-
+  console.log('OTD: ' + otdBoundary01);
+  
   const [priceBoundary1, setPriceBoundary1] = useState(2.1);
   const [priceBoundary2, setPriceBoundary2] = useState(0.3);
   const [priceBoundary3, setPriceBoundary3] = useState(-0.3);
   const [priceBoundary4, setPriceBoundary4] = useState(-2.1);
 
-  const [otdBoundary1, setOtdBoundary1] = useState(9);
+  const [otdBoundary1, setOtdBoundary1] = useState(95);
   const [otdBoundary2, setOtdBoundary2] = useState(90);
   const [otdBoundary3, setOtdBoundary3] = useState(75);
   const [otdBoundary4, setOtdBoundary4] = useState(60);
@@ -37,11 +36,28 @@ const Home = () => {
     console.log('adjusting values button fired');    
     setIsPending(true);
 
-    const calcBasis = {test: '123'};
+    const calcBasis = {
+      priceBoundary1: priceBoundary1,
+      priceBoundary2: priceBoundary2,
+      priceBoundary3: priceBoundary3,
+      priceBoundary4: priceBoundary4,
+      otdBoundary1: otdBoundary1,
+      otdBoundary2: otdBoundary2,
+      otdBoundary3: otdBoundary3,
+      otdBoundary4: otdBoundary4,
+      qBoundary1: qBoundary1,
+      qBoundary2: qBoundary2,
+      qBoundary3: qBoundary3,
+      qBoundary4: qBoundary4,
+      score1: score1,
+      score2: score2,
+      score3: score3,
+      score4: score4,
+      score5: score5
+    };
 
     
-    
-    
+
     fetch("http://localhost:8001/calcBasis", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -52,12 +68,16 @@ const Home = () => {
         console.log('CalcBasis updated')
         setIsPending(false);
         //history.push('/');
-    });
+    }).then(
+      fetch("http://localhost:8001/calcBasis", {
+        method: "DELETE"
+    
+      })
+      
 
-    fetch("http://localhost:8001/calcBasis/1", {
-      method: "DELETE"
-  
-    });
+    );
+
+
 
 
   };
