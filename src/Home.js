@@ -5,11 +5,9 @@ const Home = () => {
   const [isPending, setIsPending] = useState(false);
 
   const { data, loaded, error } = useFetch("http://localhost:8001/calcBasis");
-
    
   const otdBoundary01 = (data && data[0].otdBoundary1);
-  console.log('OTD: ' + otdBoundary01);
-  
+    
   const [priceBoundary1, setPriceBoundary1] = useState(2.1);
   const [priceBoundary2, setPriceBoundary2] = useState(0.3);
   const [priceBoundary3, setPriceBoundary3] = useState(-0.3);

@@ -69,8 +69,6 @@ const Calc = (suppliers) => {
     }
    
 
-
-
     return suppliersArray;
 }
  
