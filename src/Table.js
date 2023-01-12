@@ -7,7 +7,6 @@ const Table = ({ suppliers }) => {
   for (let i = 0; i < suppliers.length; i++) {
     invoiceSum += suppliers[i].invoiceValue;
   }
-  console.log(suppliers);
 
   //--- Sorting Supplier Array
   const fireSorting = (sorting) => {

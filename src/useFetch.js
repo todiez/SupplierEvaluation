@@ -7,7 +7,7 @@ const useFetch = (url) => {
   const [data, setData] = useState(null);
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(null);
-
+  console.log(data);
  
   // useEffect(() => { 
   //   setTimeout(() => { 
