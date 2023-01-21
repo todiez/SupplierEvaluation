@@ -1,30 +1,12 @@
 import React, { useEffect } from "react";
 
-const Table = ({ suppliers }) => {
-  //--- Calculation of invoiceSum of all suppliers
-  //-->>> ABC analysis
-  let invoiceSum = 0;
-  for (let i = 0; i < suppliers.length; i++) {
-    invoiceSum += suppliers[i].invoiceValue;
-  }
+const Table = ({ suppliers, fireSorting }) => {
 
-  //--- Sorting Supplier Array
-  const fireSorting = (sorting) => {
-    console.log(sorting);
-    const suppliersSorted = suppliers.sort((a, b) => {
-      switch (sorting) {
-        case "totalScore":
-          return b.totalScore - a.totalScore;
-        case "abc":
-          return b.abc - a.abc;
-        case "totalRating":
-          return b.totalRating - a.totalRating;
-      }
-    });
-    console.log("firesorting fired");
-    console.log(suppliersSorted);
-  };
 
+ 
+ 
+
+  //suppliers.map needs to be rerendered with the supplierssorted array!
   return (
     <div className="table">
       <table className="table table-dark">

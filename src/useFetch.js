@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 const useFetch = (url) => {
   //this is a custom hook, therefore it needs to start with use...
 
-  console.log("use fetch started")
+  //console.log("use fetch started")
   const [data, setData] = useState(null);
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(null);
-  console.log(data);
+  //console.log(data);
  
   // useEffect(() => { 
   //   setTimeout(() => { 
