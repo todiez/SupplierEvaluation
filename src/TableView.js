@@ -11,14 +11,14 @@ const TableView = () => {
   // const [suppliers, setSuppliers] = useState(null);
   // let test = data && Calc(data);
   //setSuppliers(test);
-
+  
 
    //use state instead of this
    let suppliers = data && Calc(data); 
+   
   
-
  
-  console.log(suppliers);  
+  console.log(suppliers); 
 
  //--- Sorting Supplier Array -->> send in sortedBy as props
   const fireSorting = (sorting) => {
@@ -34,11 +34,11 @@ const TableView = () => {
       }
     });
     console.log("fireSorting fired");
-    suppliers = suppliersSorted;
-    console.log(suppliers);
-    return suppliers;
+    console.log(suppliersSorted);
+    return suppliersSorted;
   };
 
+  fireSorting("abc");
 
 
   //displaying the array of objects
