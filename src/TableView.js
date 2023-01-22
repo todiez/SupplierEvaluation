@@ -14,6 +14,8 @@ const TableView = () => {
   //use state instead of this
   let suppliers = data && Calc(data);
 
+  //something with async/await??!?!
+
   console.log(suppliers);
 
   //--- Sorting Supplier Array -->> send in sortedBy as props
