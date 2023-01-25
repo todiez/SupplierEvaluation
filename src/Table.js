@@ -1,11 +1,6 @@
 import React, { useEffect } from "react";
 
 const Table = ({ suppliers, fireSorting }) => {
-
-
- 
- 
-
   //suppliers.map needs to be rerendered with the supplierssorted array!
   return (
     <div className="table">

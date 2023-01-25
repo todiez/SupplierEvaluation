@@ -1,22 +1,19 @@
 import useFetch from "./useFetch";
 import Table from "./Table";
 import Calc from "./Calc";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const TableView = () => {
+  const [suppliers, setSuppliers] = useState(null);
+
   //getting data from server
-  const { data, loaded, error } = useFetch("http://localhost:8000/suppliers");
+  const { data, loaded, error } = useFetch("http://localhost:8000/supplierData");
+  
+  const test = Calc(data);
+  setSuppliers(test);
 
-  // const [suppliers, setSuppliers] = useState(data);
-  // let test = data && Calc(data);
-  // setSuppliers(test);
-
-  //use state instead of this
-  let suppliers = data && Calc(data);
-
-  //something with async/await??!?!
-
-  console.log(suppliers);
+  //---->>>Infinite loop:
+  //Uncaught Error: Too many re-renders. React limits the number of renders to prevent an infinite loop.
 
   //--- Sorting Supplier Array -->> send in sortedBy as props
   const fireSorting = (sorting) => {
@@ -32,22 +29,15 @@ const TableView = () => {
       }
     });
     console.log("fireSorting fired");
-    console.log(suppliersSorted);
-   
   };
-
-  data && fireSorting("totalScore");
 
   //displaying the array of objects
   return (
     <div className="home">
       {error && <div>{error}</div>}
       {!loaded && <div className="loading">Loading...</div>}
-
       {/* Table component displaying */}
-      {data && <Table suppliers={suppliers} fireSorting={fireSorting} />}
-      {/* {data && <Table suppliers={suppliers} sortedBy={setSortedBy} fireSortingEvent={fireSorting}/>} */}
-      {/* pass in something more than supplier */}
+      {<Table suppliers={suppliers} fireSorting={fireSorting} />}
     </div>
   );
 };
