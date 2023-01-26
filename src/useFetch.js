@@ -8,20 +8,29 @@ const useFetch = (url) => {
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
 
-  const getData =  async () => {
-    const response = await fetch(url);
-    console.log(response.message)
-    if (response.status !== 200) {
-      setLoaded(false);
-      throw new Error("Cannot fetch data");
-    }
-    const data = await response.json();
-    console.log(data);
-    setData(data);
-    setLoaded(true);
+  // const getData =  async () => {
+  //   const response = await fetch(url);
+  //   console.log(response.message)
+  //   if (response.status !== 200) {
+  //     setLoaded(false);
+  //     throw new Error("Cannot fetch data");
+  //   }
+  //   const data = await response.json();
+  //   console.log(data);
+  //   setData(data);
+  //   setLoaded(true);
 
-  }
-  getData();
+  // }
+  // getData();
+
+
+
+  fetch(url).then((response) =>{
+    return response.json();
+  }).then(data => {
+    setData(data)
+  })
+
 
   // useEffect(() => {
   //   const getData = async () => {

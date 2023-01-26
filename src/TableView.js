@@ -8,6 +8,7 @@ const TableView = () => {
 
   //getting data from server
   const { data, loaded, error } = useFetch("http://localhost:8000/supplierData");
+  console.log("TableView Data: " + data);
   
   const test = Calc(data);
   setSuppliers(test);
