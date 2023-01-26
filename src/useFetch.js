@@ -23,39 +23,30 @@ const useFetch = (url) => {
   // }
   // getData();
 
-
-
-  fetch(url).then((response) =>{
-    return response.json();
-  }).then(data => {
-    setData(data)
-  })
-
-
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     const response = await fetch(url);
-  //     console.log(response.message);
-  //     if (response.status !== 200) {
-  //       throw new Error("Cannot fetch data");
-  //     }
-  //     const data = await response.json();
-  //     console.log(data);
-  //     return data;
-  //   };
-  //   getData()
-  //     .then((dataFetch) => {
-  //       console.log(dataFetch);
-  //       setData(dataFetch);
-  //       setLoaded(true);
-  //       setError(null);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       setLoaded(true);
-  //       setError(err.message);
-  //     });
-  // }, []);
+  useEffect(() => {
+    const getData = async () => {
+      const response = await fetch(url);
+      console.log(response.message);
+      if (response.status !== 200) {
+        throw new Error("Cannot fetch data");
+      }
+      const data = await response.json();
+      console.log(data);
+      return data;
+    };
+    getData()
+      .then((dataFetch) => {
+        console.log(dataFetch);
+        setData(dataFetch);
+        setLoaded(true);
+        setError(null);
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoaded(true);
+        setError(err.message);
+      });
+  }, []);
 
   console.log("useFetch: " + data);
 

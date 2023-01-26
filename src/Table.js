@@ -1,6 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 const Table = ({ suppliers, fireSorting }) => {
+  console.log("______________");
+  console.log(suppliers);
+
+  useEffect(()=>{console.log("------inside Table");}, [])
+  
   //suppliers.map needs to be rerendered with the supplierssorted array!
   return (
     <div className="table">
@@ -44,7 +49,9 @@ const Table = ({ suppliers, fireSorting }) => {
           </tr>
         </thead>
 
-        {suppliers.map((supplier, counter) => (
+
+
+        {suppliers?.map((supplier, counter) => (
           <tbody key={supplier.id}>
             <tr>
               <th scope="row">{counter + 1}</th>

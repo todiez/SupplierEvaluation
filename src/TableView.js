@@ -6,15 +6,30 @@ import { useEffect, useState } from "react";
 const TableView = () => {
   const [suppliers, setSuppliers] = useState(null);
 
-  //getting data from server
-  const { data, loaded, error } = useFetch("http://localhost:8000/supplierData");
-  console.log("TableView Data: " + data);
   
-  const test = Calc(data);
-  setSuppliers(test);
 
-  //---->>>Infinite loop:
-  //Uncaught Error: Too many re-renders. React limits the number of renders to prevent an infinite loop.
+
+  //getting data from server
+  useEffect(
+      async () => {
+        console.log("inside TableView")
+    // const { data, loaded, error } = await fetch(
+    //   "http://localhost:8000/supplierData"
+    // )
+    const data = fetch(
+      "http://localhost:8000/supplierData"
+    );
+    const cleanData = data.json();
+    console.log("TableView Data: " + cleanData);
+      setSuppliers(cleanData);
+    // const test = Calc(data);
+    // setSuppliers(test);
+  }, []);
+
+
+
+
+
 
   //--- Sorting Supplier Array -->> send in sortedBy as props
   const fireSorting = (sorting) => {
@@ -35,10 +50,15 @@ const TableView = () => {
   //displaying the array of objects
   return (
     <div className="home">
-      {error && <div>{error}</div>}
-      {!loaded && <div className="loading">Loading...</div>}
+      {/* {error && <div>{error}</div>}
+      {!loaded && <div className="loading">Loading...</div>} */}
       {/* Table component displaying */}
-      {<Table suppliers={suppliers} fireSorting={fireSorting} />}
+      {
+        <Table
+          suppliers={suppliers ? suppliers : ""}
+          fireSorting={fireSorting}
+        />
+      }
     </div>
   );
 };
